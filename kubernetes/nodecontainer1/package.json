@@ -1,0 +1,9 @@
+{
+    "name": "node1",
+    "version": "1.0.0",
+    "description": "A sample application for Kubernetes container using Docker.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    }
+}
