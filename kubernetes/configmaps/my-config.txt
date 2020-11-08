@@ -1,0 +1,3 @@
+# Sample config file
+app_param1 = dummyValue1
+app_param2 = dummyValue2
