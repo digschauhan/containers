@@ -1,0 +1,1 @@
+eks delete cluster -f ./ekscluster.yaml
