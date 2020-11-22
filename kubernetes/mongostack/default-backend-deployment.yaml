@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploydefaultbackend
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: default-http-backend
+
+  template:
+    metadata:
+      labels:
+        app: default-http-backend
+
+      annotations:
+        kubernetes.io/change-cause: "Initial deployment"
+    spec:
+      containers:
+        - name: default-http-backend
+          image: "gcr.io/kuar-demo/kuard-amd64:blue"
+          imagePullPolicy: Always
+
+          
+---
+apiVersion:   v1
+kind: Service
+metadata:
+  name: default-http-backend
+
+spec:
+  selector:
+    app: default-http-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+ 

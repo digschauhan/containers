@@ -7,18 +7,17 @@ metadata:
 
 nodeGroups:
   - name: node1
+    minSize: 1
+    maxSize: 2
     instanceType: t2.micro
     desiredCapacity: 1
     ssh:
       publicKeyName: djaykey
-  - name: node2-mixed
-    minSize: 1
-    maxSize: 2
-    instancesDistribution:
-      maxPrice: 0.2
-      instanceTypes: ["t2.micro", "t2.small"]
-      onDemandBaseCapacity: 0
-      onDemandPercentageAboveBaseCapacity: 50
     
+  - name: node2
+    minSize: 0
+    maxSize: 1
+    instanceType: t2.micro
+    desiredCapacity: 1
     ssh:
       publicKeyName: djaykey
