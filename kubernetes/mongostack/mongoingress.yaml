@@ -18,7 +18,7 @@ spec:
   - host: mongo.prepdigigroup.com
     http:
       paths:
-      - path: "/mongo"
+      - path: "/"
         backend:
           serviceName: mongoexpress-service
           servicePort: 8081
